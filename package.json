@@ -1,0 +1,29 @@
+{
+  "name": "schelling-model",
+  "version": "0.1.0",
+  "description": "Schelling's model of segregation implemented in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mason-cds-intro-comput-sci/schelling-model.git"
+  },
+  "keywords": [
+    "simulation",
+    "schelling",
+    "model",
+    "segregation"
+  ],
+  "author": "James K. Glasbrenner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mason-cds-intro-comput-sci/schelling-model/issues"
+  },
+  "homepage": "https://github.com/mason-cds-intro-comput-sci/schelling-model#readme",
+  "dependencies": {
+    "chance": "^1.0.12",
+    "nouislider": "^10.1.0"
+  }
+}

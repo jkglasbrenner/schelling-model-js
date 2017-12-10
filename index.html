@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <link href="/controls/nouislider.min.css" rel="stylesheet">
+    <link href="/visualization/visualization.css" rel="stylesheet">
+    <link href="/controls/controls.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="visualization">
+      <div class="simulation" id='schellingModel' style='width:600px;height:600px;'></div>
+
+      <div class="noUiSlider controls">
+        <div class="simButton">
+          <button id="startPauseButton">Start</button>
+          <button id="resetButton">Reset</button>
+        </div>
+        <div class="simSlider">
+          <div id='tolerance'></div>
+          <span class="widget-val" id="toleranceValue"></span>
+        </div>
+        <div class="simSlider">
+          <div id='fractionEmpty'></div>
+          <span class="widget-val" id="fractionEmptyValue"></span>
+        </div>
+        <div class="simSlider">
+          <div id='gridSize'></div>
+          <span class="widget-val" id="gridSizeValue"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script src="/dist/schelling-model.js"></script>
+
+  </body>
+
+</html>

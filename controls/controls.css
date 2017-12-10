@@ -1,0 +1,86 @@
+button {
+  background: #8ad2d3;
+  font-size: 0.9em;
+  padding: 0 15px;
+  border-radius: 4px;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  color: #fff;
+  cursor: pointer;
+  margin: 15px 5px 0 0;
+}
+
+.controls {
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  display: block;
+}
+
+#tolerance {
+  margin: auto;
+  width: 100%;
+  display: inline-block;
+}
+
+#fractionEmpty {
+  margin: auto;
+  width: 100%;
+  display: inline-block;
+}
+
+#gridSize {
+  margin: auto;
+  width: 100%;
+  display: inline-block;
+}
+
+.widget-val {
+  display: inline-block;
+  margin: auto;
+  padding-top: 10px;
+  font-size: 0.9em;
+}
+
+#toleranceValue:before {
+  content: "Tolerance: ";
+}
+
+#fractionEmptyValue:before {
+  content: "Empty: ";
+}
+
+#gridSizeValue:before {
+  content: "Size: ";
+}
+
+.simButton {
+  display: block;
+  vertical-align: middle;
+  width: 200px;
+  height: 40px;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+#startPauseButton {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+  height: 40px;
+  width: 90px;
+}
+
+#resetButton {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+  height: 40px;
+  width: 90px;
+}
+
+.simSlider {
+  display: block;
+  vertical-align: middle;
+  margin: auto;
+  padding-bottom: 20px;
+}
