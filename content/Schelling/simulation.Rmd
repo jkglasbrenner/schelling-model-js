@@ -1,4 +1,4 @@
-Title: Schelling's model of segregation
+Title: Schelling's Model of Segregation
 Author: James K. Glasbrenner
 Date: 2017-12-10 10:00
 Url:
@@ -6,17 +6,70 @@ Slug: index.html
 Save_As: index.html
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 5,
-                      fig.asp = 0.618, out.width = "70%", dpi = 120,
-                      fig.align = "center", cache = TRUE)
+knitr::opts_chunk$set(
+  echo = FALSE, eval = TRUE, fig.width = 5, fig.asp = 0.618,
+  out.width = "70%", dpi = 120, fig.align = "center")
 ```
 
-## Description of simulation
+## Overview
 
-The simulation takes place on a two-dimensional $n \times n$ square grid, with $n = 30$ being the initial default setting.
-The grid is filled with three colors of squares: [**blue**]{.tableau-blue-text}, [**orange**]{.tableau-orange-text}, and **white** squares.
+*Schelling's Model of Segregation* is one of the first known examples of an [agent-based model][abm-wiki], which is a type of computational simulation that creates a world populated with autonomous agents that make decisions by following a set of rules.
+In principle, these rules can be different for each agent in the simulation, although this is not required.
+There are also rules for how the agents can interact with each other.
+The goal of these simulations is to examine how a collection of rule-based agents interacting with each other can lead to interesting and complex behavior, a phenomenon known as [**emergence**][emergence-wiki] (birds flocking is a canonical example of emergence).
+
+Schelling's model[@Schelling1969__Models], which was published in 1969, offered an explanation for why neighborhoods in the United States (and other countries) continue to be race segregated, even if individual citizens are not prejudiced and are comfortable with seeing diversity in their neighborhood.
+The rules behind the simulation are quite simple: we assume that people of all ethnic and racial backgrounds will move if, and only if, a significant portion of their neighbors no longer look like themselves.
+We can call this threshold for moving an individual's **similarity preference**.
+The surprising result is that even for a similarity preference that is much less than $50\%$, which corresponds to individuals that are very comfortable with diversity, race-segregated neighborhoods are still a frequent outcome.
+While this is just one explanation among many, and this simulation is not meant to justify the continued existence of highly segregated communities, it does show that the problems of segregation can emerge even when we consider motivations that are free of bad intent.
+
+## How the Simulation Works
+
+### Setup
+
+The simulation environment is bit like an over-sized checkerboard, in that it's a two-dimensional square grid with $n$ rows and $n$ columns, with $n = 20$ chosen as the default.
+To set things up, we first will populate the grid with three different colors of squares: [**blue**]{.tableau-blue-text}, [**orange**]{.tableau-orange-text}, and **white** squares.
+The [**blue**]{.tableau-blue-text} and [**orange**]{.tableau-orange-text} squares represent the two different kinds of **agents** in the simulation, while the **white** squares are empty space.
+The total number of [**blue**]{.tableau-blue-text} squares, [**orange**]{.tableau-orange-text} squares, and **white** squares can be adjusted by changing the percentage of white squares on the grid and the ratio:
+\\[\frac{\text{number of blue squares}}{\text{number of orange squares}}\\]
+After determining how many [**blue**]{.tableau-blue-text}, [**orange**]{.tableau-orange-text}, and **white** squares you'll have, we then place them at random on the grid.
+This is what happens when you press the `Reset` button below the simulation visualization.
+
+### Agent Satisfaction
+
+In addition to initializing the grid, we also need to set the *Similarity* parameter, which by default is set to $30\%$.
+This parameter controls what it takes for an agent to be **satisfied**, meaning that it will not move to an empty square if provided the chance.
+An agent's **satisfaction** is determined by counting the total number of blue and orange squares immediately surrounding it.
+When *Similarity* is set to $30\%$, then an agent will be satisfied if $30\%$ or more of its neighbors are the same color, which is the case in the following diagrams:
+
+![Examples of satisfied agents]()
+
+On the other hand, if *less* than $30\%$ of its neighbors are the same color, then the agent is **unsatisfied** and will move to a random empty square if provided the chance.
+The diagrams below show examples of an unsatisfied agent:
+
+![Examples of unsatisfied agents]()
+
+### Algorithm
+
+One step in the simulation proceeds as follows:
+
+1.  Select an agent --- color is not important --- at random
+
+2.  Count how many of the agent's neighbors are of the same color and are of the different color, and calculate the similarity ratio $\frac{\text{number of same color squares}}{\text{number of different color squares}}$, ignoring any neighboring empty squares
+
+3.  If the similarity ratio is *greater than* the *Similarity* parameter, then the agent doesn't move and the simulation step ends, otherwise continue on to step 4
+
+4.  If the similarity ratio is *less than* the *Similarity* parameter, choose an empty square at random and move the agent there, ending the simulation step
+
+Steps 1--4 are then repeated multiple times until either all agents are satisfied or the simulation is stopped by pressing the `Pause` button or closing the web browser.
 
 ## Simulation
+
+An implementation of *The Schelling Model of Segregation* is below.
+Use the sliders to adjust the different parameters of the simulation.
+The *Similarity* parameter can be varied in real-time as the simulation runs.
+However, you will need to press the `Reset` button if you adjust the parameters that change the starting properties for the grid, such as $n$, the percentage of empty squares, and the blue to orange agent ratio.
 
 <div class="visualization browser-default">
 <div class="simulation" id='schellingModel'></div>
@@ -41,5 +94,9 @@ The grid is filled with three colors of squares: [**blue**]{.tableau-blue-text},
 </div>
 </div>
 
+## References
 
+<!-- Implicit links -->
 
+[abm-wiki]:       https://en.wikipedia.org/wiki/Agent-based_model
+[emergence-wiki]: https://en.wikipedia.org/wiki/Emergence
