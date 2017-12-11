@@ -35,7 +35,7 @@ DEFAULT_PAGINATION = 10
 # RELATIVE_URLS = True
 
 # Define paths and urls
-STATIC_PATHS = ['figures', ]
+STATIC_PATHS = ['figures', 'documents']
 PAGE_PATHS = []
 PAGE_URL = ''
 PAGE_SAVE_AS = ''
@@ -85,7 +85,9 @@ RMD_READER_KNITR_OPTS_KNIT = None
 
 # Pandoc Reader
 PANDOC_ARGS = [
-    '--smart', '--no-highlight', '--filter', 'pandoc-citeproc', '--mathjax',
+    '--smart', '--no-highlight', '--filter', 'pandoc-citeproc',
+    '--csl=theme/format/apslike.csl',  '--metadata', 'link-citations=true',
+    '--bibliography', 'content/documents/references.bib', '--mathjax',
     '--variable', '"mathjax-url:#"'
 ]
 PANDOC_EXTENSIONS = [
