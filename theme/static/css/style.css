@@ -1,0 +1,234 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.mason-green {
+  background-color: #006633 !important;
+}
+
+.mason-green-text {
+  color: #006633 !important;
+}
+
+.mason-gold {
+  background-color: #FFCC33 !important;
+}
+
+.mason-gold-text {
+  color: #FFCC33 !important;
+}
+
+.mason-dark-turquoise {
+  background-color: #00909E !important;
+}
+
+.mason-dark-turquoise-text {
+  color: #00909E !important;
+}
+
+.mason-medium-slate-blue {
+  background-color: #425195 !important;
+}
+
+.mason-medium-slate-blue-text {
+  color: #425195 !important;
+}
+
+.mason-cardinal-red {
+  background-color: #AC1D37 !important;
+}
+
+.mason-cardinal-red-text {
+  color: #AC1D37 !important;
+}
+
+.mason-bright-green {
+  background-color: #81902B !important;
+}
+
+.mason-bright-green-text {
+  color: #81902B !important;
+}
+
+.mason-dark-goldenrod {
+  background-color: #9D7F00 !important;
+}
+
+.mason-dark-goldenrod-text {
+  color: #9D7F00 !important;
+}
+
+.mason-tangerine {
+  background-color: #F7941E !important;
+}
+
+.mason-tangerine-text {
+  color: #F7941E !important;
+}
+
+.mason-light-gray {
+  background-color: #D1D3D5 !important;
+}
+
+.mason-light-gray-text {
+  color: #D1D3D5 !important;
+}
+
+.mason-exploratory-gray {
+  background-color: #A9B0AD !important;
+}
+
+.mason-exploratory-gray-text {
+  color: #A9B0AD !important;
+}
+
+.mason-observatory-gray {
+  background-color: #87908F !important;
+}
+
+.mason-observatory-gray-text {
+  color: #87908F !important;
+}
+
+.mason-light-taupe-tile {
+  background-color: #CCC288 !important;
+}
+
+.mason-light-taupe-tile-text {
+  color: #CCC288 !important;
+}
+
+.mason-foundation-stone {
+  background-color: #A39382 !important;
+}
+
+.mason-foundation-stone-text {
+  color: #A39382 !important;
+}
+
+.mason-statue-bronze {
+  background-color: #805732 !important;
+}
+
+.mason-statue-bronze-text {
+  color: #805732 !important;
+}
+
+.mason-tan {
+  background-color: #E4E6D7 !important;
+}
+
+.mason-tan-text {
+  color: #E4E6D7 !important;
+}
+
+.mason-southside-glass {
+  background-color: #A0C9C1 !important;
+}
+
+.mason-southside-glass-text {
+  color: #A0C9C1 !important;
+}
+
+.mason-school-of-art-stone {
+  background-color: #D8D8C1 !important;
+}
+
+.mason-school-of-art-stone-text {
+  color: #D8D8C1 !important;
+}
+
+.tableau-blue-text {
+  color: #006BA4 !important;
+}
+
+.tableau-orange-text {
+  color: #FF800E !important;
+}
+
+// Class for when element is above threshold
+.pin-top {
+  position: relative;
+}
+
+// Class for when element is below threshold
+.pin-bottom {
+  position: relative;
+}
+
+// Class for when element is pinned
+.pinned {
+  position: fixed !important;
+}
+
+html {
+  font-size: 12.0pt;
+}
+
+h1 {
+  font-size: 2.8em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.2em;
+}
+
+h3 {
+  font-size: 1.8em;
+  font-style: italic;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+h5 {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+h6 {
+  font-size: 1.1em;
+}
+
+.page-footer .footer-copyright {
+  font-weight: 500;
+}
+
+.page-footer .footer-copyright a:visited {
+  color: #F7941E;
+}
+
+.page-footer .footer-copyright a:link {
+  color: #FFCC33;
+}
+
+.page-last-modified {
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+div.quote-container blockquote cite {
+  color: #87908F;
+  font-style: normal;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 5px;
+}
+
+div.quote-container blockquote cite:before {
+  content: "\2014 \2009";
+}

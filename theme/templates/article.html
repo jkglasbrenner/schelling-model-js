@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% if article.description %}
+<meta name="description" content="{{article.description}}" />
+{% endif %}
+{% if category is equalto 'Schelling' %}
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/nouislider.min.css" rel="stylesheet" media="screen,projection"/>
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/visualization.css" rel="stylesheet" media="screen,projection"/>
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/controls.css" rel="stylesheet" media="screen,projection"/>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="userHtml">
+  <h1>{{ article.title }}</h1>
+  <div class="divider mason-dark-turquoise"></div>
+
+  {{ article.content }}
+
+  {% if article.modified %}
+  <br/>
+  <p class="page-last-modified">
+    <time datetime="{{ article.modified.isoformat() }}">
+      Last modified: {{ article.modified|strftime('%A, %B %d, %Y %I:%M:%S %p %Z') }}
+    </time>
+  </p>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% if category is equalto 'Schelling' %}
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/schelling-model.js"></script>
+{% endif %}
+{% endblock %}
+

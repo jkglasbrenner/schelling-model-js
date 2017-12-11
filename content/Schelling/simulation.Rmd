@@ -1,0 +1,45 @@
+Title: Schelling's model of segregation
+Author: James K. Glasbrenner
+Date: 2017-12-10 10:00
+Url:
+Slug: index.html
+Save_As: index.html
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 5,
+                      fig.asp = 0.618, out.width = "70%", dpi = 120,
+                      fig.align = "center", cache = TRUE)
+```
+
+## Description of simulation
+
+The simulation takes place on a two-dimensional $n \times n$ square grid, with $n = 30$ being the initial default setting.
+The grid is filled with three colors of squares: [**blue**]{.tableau-blue-text}, [**orange**]{.tableau-orange-text}, and **white** squares.
+
+## Simulation
+
+<div class="visualization browser-default">
+<div class="simulation" id='schellingModel'></div>
+
+<div class="noUiSlider controls">
+<div class="simButton">
+<button id="startPauseButton">Start</button>
+<button id="resetButton">Reset</button>
+</div>
+<div class="simSlider">
+<div id='tolerance'></div>
+<span class="widget-val" id="toleranceValue"></span>
+</div>
+<div class="simSlider">
+<div id='fractionEmpty'></div>
+<span class="widget-val" id="fractionEmptyValue"></span>
+</div>
+<div class="simSlider">
+<div id='gridSize'></div>
+<span class="widget-val" id="gridSizeValue"></span>
+</div>
+</div>
+</div>
+
+
+
