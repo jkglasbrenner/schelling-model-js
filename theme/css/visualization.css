@@ -1,0 +1,11 @@
+.simulation {
+  width: 600px;
+  height: 600px;
+  margin: auto;
+}
+
+.visualization {
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+}
