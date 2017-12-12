@@ -28,7 +28,7 @@ While this is just one explanation among many, and this simulation is not meant 
 
 ### Setup
 
-The simulation environment is bit like an over-sized checkerboard, in that it's a two-dimensional square grid with $n$ rows and $n$ columns, with $n = 20$ chosen as the default.
+The simulation environment is bit like an over-sized checkerboard, in that it's a two-dimensional square grid with $n$ rows and $n$ columns, with $n=30$ chosen as the default.
 To set things up, we first will populate the grid with three different colors of squares: [**blue**]{.tableau-blue-text}, [**orange**]{.tableau-orange-text}, and **white** squares.
 The [**blue**]{.tableau-blue-text} and [**orange**]{.tableau-orange-text} squares represent the two different kinds of **agents** in the simulation, while the **white** squares are empty space.
 The total number of [**blue**]{.tableau-blue-text} squares, [**orange**]{.tableau-orange-text} squares, and **white** squares can be adjusted by changing the percentage of white squares on the grid and the ratio:
