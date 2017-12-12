@@ -1,6 +1,7 @@
 Title: Schelling's Model of Segregation
 Author: James K. Glasbrenner
 Date: 2017-12-10 10:00
+Modified: 2017-12-11 19:45
 Url:
 Slug: index.html
 Save_As: index.html
