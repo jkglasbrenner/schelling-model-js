@@ -40,15 +40,23 @@ button {
 }
 
 #toleranceValue:before {
-  content: "Tolerance: ";
+  content: "Similarity: ";
+}
+
+#toleranceValue:after {
+  content: "%";
 }
 
 #fractionEmptyValue:before {
   content: "Empty: ";
 }
 
+#fractionEmptyValue:after {
+  content: "%";
+}
+
 #gridSizeValue:before {
-  content: "Size: ";
+  content: "n: ";
 }
 
 .simButton {
