@@ -24,12 +24,28 @@
       <div class="container">
 
 <div class="userHtml">
-  <h1>Schelling&#8217;s model of&nbsp;segregation</h1>
+  <h1>Schelling&#8217;s Model of&nbsp;Segregation</h1>
   <div class="divider mason-dark-turquoise"></div>
 
-  <h2 id="description-of-simulation">Description of&nbsp;simulation</h2>
-<p>The simulation takes place on a two-dimensional <span class="math inline">\(n \times n\)</span> square grid, with <span class="math inline">\(n = 30\)</span> being the initial default setting. The grid is filled with three colors of squares: <span class="tableau-blue-text"><strong>blue</strong></span>, <span class="tableau-orange-text"><strong>orange</strong></span>, and <strong>white</strong>&nbsp;squares.</p>
+  <h2 id="overview">Overview</h2>
+<p><em>Schelling’s Model of Segregation</em> is one of the first known examples of an <a href="https://en.wikipedia.org/wiki/Agent-based_model">agent-based model</a>, which is a type of computational simulation that creates a world populated with autonomous agents that make decisions by following a set of rules. In principle, these rules can be different for each agent in the simulation, although this is not required. There are also rules for how the agents can interact with each other. The goal of these simulations is to examine how a collection of rule-based agents interacting with each other can lead to interesting and complex behavior, a phenomenon known as <a href="https://en.wikipedia.org/wiki/Emergence"><strong>emergence</strong></a> (birds flocking is a canonical example of&nbsp;emergence).</p>
+<p>Schelling’s model<span class="citation" data-cites="Schelling1969__Models"> [<a href="#ref-Schelling1969__Models">1</a>]</span>, which was published in 1969, offered an explanation for why neighborhoods in the United States (and other countries) continue to be race segregated, even if individual citizens are not prejudiced and are comfortable with seeing diversity in their neighborhood. The rules behind the simulation are quite simple: we assume that people of all ethnic and racial backgrounds will move if, and only if, a significant portion of their neighbors no longer look like themselves. We can call this threshold for moving an individual’s <strong>similarity preference</strong>. The surprising result is that even for a similarity preference that is much less than <span class="math inline">\(50\%\)</span>, which corresponds to individuals that are very comfortable with diversity, race-segregated neighborhoods are still a frequent outcome. While this is just one explanation among many, and this simulation is not meant to justify the continued existence of highly segregated communities, it does show that the problems of segregation can emerge even when we consider motivations that are free of bad&nbsp;intent.</p>
+<h2 id="how-the-simulation-works">How the Simulation&nbsp;Works</h2>
+<h3 id="setup">Setup</h3>
+<p>The simulation environment is bit like an over-sized checkerboard, in that it’s a two-dimensional square grid with <span class="math inline">\(n\)</span> rows and <span class="math inline">\(n\)</span> columns, with <span class="math inline">\(n=30\)</span> chosen as the default. To set things up, we first will populate the grid with three different colors of squares: <span class="tableau-blue-text"><strong>blue</strong></span>, <span class="tableau-orange-text"><strong>orange</strong></span>, and <strong>white</strong> squares. The <span class="tableau-blue-text"><strong>blue</strong></span> and <span class="tableau-orange-text"><strong>orange</strong></span> squares represent the two different kinds of <strong>agents</strong> in the simulation, while the <strong>white</strong> squares are empty space. The total number of <span class="tableau-blue-text"><strong>blue</strong></span> squares, <span class="tableau-orange-text"><strong>orange</strong></span> squares, and <strong>white</strong> squares can be adjusted by changing the percentage of white squares on the grid and the ratio: <span class="math display">\[\frac{\text{number of blue squares}}{\text{number of orange squares}}\]</span> After determining how many <span class="tableau-blue-text"><strong>blue</strong></span>, <span class="tableau-orange-text"><strong>orange</strong></span>, and <strong>white</strong> squares you’ll have, we then place them at random on the grid. This is what happens when you press the <code>Reset</code> button below the simulation&nbsp;visualization.</p>
+<h3 id="agent-satisfaction">Agent&nbsp;Satisfaction</h3>
+<p>In addition to initializing the grid, we also need to set the <em>Similarity</em> parameter, which by default is set to <span class="math inline">\(30\%\)</span>. This parameter controls what it takes for an agent to be <strong>satisfied</strong>, meaning that it will not move to an empty square if provided the chance. An agent’s <strong>satisfaction</strong> is determined by counting the total number of blue and orange squares immediately surrounding it. When <em>Similarity</em> is set to <span class="math inline">\(30\%\)</span>, then an agent will be satisfied if <span class="math inline">\(30\%\)</span> or more of its neighbors are the same color. On the other hand, if <em>less</em> than <span class="math inline">\(30\%\)</span> of its neighbors are the same color, then the agent is <strong>unsatisfied</strong> and will move to a random empty square if provided the&nbsp;chance.</p>
+<h3 id="algorithm">Algorithm</h3>
+<p>One step in the simulation proceeds as&nbsp;follows:</p>
+<ol type="1">
+<li><p>Select an agent — color is not important — at&nbsp;random</p></li>
+<li><p>Count how many of the agent’s neighbors are of the same color and are of the different color, and calculate the similarity ratio <span class="math inline">\(\frac{\text{number of same color squares}}{\text{number of different color squares}}\)</span>, ignoring any neighboring empty&nbsp;squares</p></li>
+<li><p>If the similarity ratio is <em>greater than</em> the <em>Similarity</em> parameter, then the agent doesn’t move and the simulation step ends, otherwise continue on to step&nbsp;4</p></li>
+<li><p>If the similarity ratio is <em>less than</em> the <em>Similarity</em> parameter, choose an empty square at random and move the agent there, ending the simulation&nbsp;step</p></li>
+</ol>
+<p>Steps 1–4 are then repeated multiple times until either all agents are satisfied or the simulation is stopped by pressing the <code>Pause</code> button or closing the web&nbsp;browser.</p>
 <h2 id="simulation">Simulation</h2>
+<p>An implementation of <em>The Schelling Model of Segregation</em> is below. Use the sliders to adjust the different parameters of the simulation. The <em>Similarity</em> parameter can be varied in real-time as the simulation runs. However, you will need to press the <code>Reset</code> button if you adjust the parameters that change the starting properties for the grid, such as <span class="math inline">\(n\)</span> and the percentage of empty squares. For simplicity, we fix the ratio of blue to orange agents to always be <span class="math inline">\(50/50\)</span>.</p>
 <div class="visualization browser-default">
 <div id="schellingModel" class="simulation">
 
@@ -61,6 +77,13 @@ Reset
 </div>
 <p><span id="gridSizeValue" class="widget-val"></span></p>
 </div>
+</div>
+</div>
+<h2 id="references">References</h2>
+<!-- Implicit links -->
+<div id="refs" class="references">
+<div id="ref-Schelling1969__Models">
+<p>[1] <span class="caps">T. C.</span> Schelling, in <em>The American Economic Review</em> (American Economic Association, 1969), pp.&nbsp;488–493.</p>
 </div>
 </div>
 

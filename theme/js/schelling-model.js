@@ -1961,15 +1961,15 @@ module.exports = function () {
   });
 
   tolerance.noUiSlider.on('update', function( values, handle ){
-	toleranceValue.innerHTML = values[handle];
+	toleranceValue.innerHTML = Math.round( values[ handle ] * 100 );
   });
 
   fractionEmpty.noUiSlider.on('update', function( values, handle ){
-	fractionEmptyValue.innerHTML = values[handle];
+	fractionEmptyValue.innerHTML = Math.round( values[ handle ] * 100 );
   });
 
   gridSize.noUiSlider.on('update', function( values, handle ){
-	gridSizeValue.innerHTML = values[handle];
+	gridSizeValue.innerHTML = Math.round( values[ handle ] );
   });
 
   startPause.addEventListener('click', function () {
