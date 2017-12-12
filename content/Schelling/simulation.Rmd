@@ -41,14 +41,8 @@ This is what happens when you press the `Reset` button below the simulation visu
 In addition to initializing the grid, we also need to set the *Similarity* parameter, which by default is set to $30\%$.
 This parameter controls what it takes for an agent to be **satisfied**, meaning that it will not move to an empty square if provided the chance.
 An agent's **satisfaction** is determined by counting the total number of blue and orange squares immediately surrounding it.
-When *Similarity* is set to $30\%$, then an agent will be satisfied if $30\%$ or more of its neighbors are the same color, which is the case in the following diagrams:
-
-![Examples of satisfied agents]()
-
+When *Similarity* is set to $30\%$, then an agent will be satisfied if $30\%$ or more of its neighbors are the same color.
 On the other hand, if *less* than $30\%$ of its neighbors are the same color, then the agent is **unsatisfied** and will move to a random empty square if provided the chance.
-The diagrams below show examples of an unsatisfied agent:
-
-![Examples of unsatisfied agents]()
 
 ### Algorithm
 
@@ -69,7 +63,8 @@ Steps 1--4 are then repeated multiple times until either all agents are satisfie
 An implementation of *The Schelling Model of Segregation* is below.
 Use the sliders to adjust the different parameters of the simulation.
 The *Similarity* parameter can be varied in real-time as the simulation runs.
-However, you will need to press the `Reset` button if you adjust the parameters that change the starting properties for the grid, such as $n$, the percentage of empty squares, and the blue to orange agent ratio.
+However, you will need to press the `Reset` button if you adjust the parameters that change the starting properties for the grid, such as $n$ and the percentage of empty squares.
+For simplicity, we fix the ratio of blue to orange agents to always be $50/50$.
 
 <div class="visualization browser-default">
 <div class="simulation" id='schellingModel'></div>
