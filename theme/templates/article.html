@@ -35,7 +35,7 @@
 {% block scripts %}
 {{ super() }}
 {% if category is equalto 'Schelling' %}
-<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script src='https://cdn.plot.ly/plotly-1.36.1.min.js'></script>
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/schelling-model.js"></script>
 {% endif %}
 {% endblock %}
